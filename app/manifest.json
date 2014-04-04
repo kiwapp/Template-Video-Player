@@ -1,0 +1,20 @@
+{
+    "app_info": {
+        "name": "Video Playlist",
+        "author": "Adrien Carta",
+        "codename": "1.0",
+        "author_email": "adrien@procheo.fr",
+        "description": "Playlist video player."
+    },
+    "config": {
+        "typedef": {},
+        "fields": {
+            "videoPathes": {
+                "kw_type": "array",
+                "arraytype" : "string",
+                "label": "The pathes to the videos you want to play. The order will be the playlist order.",
+                "field_label": "Enter the path here."
+            }
+        }
+    }
+}

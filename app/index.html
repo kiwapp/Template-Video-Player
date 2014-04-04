@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <script src="kiwapp.js"></script>
+        <script src="kiwappVideo.js"></script>
+        <script>
+            //Intializing Kiwapp
+            Kiwapp('../config/kiwapp_config.js', function(){
+                //Set the video player config object
+                var config = {
+                    origin_x : 0,
+                    origin_y : 0,
+                    width    : window.innerWidth,
+                    height   : window.innerHeight
+                };
+
+                //Initializing the video player
+                var player = new KWPlayer(config);
+
+                //Getting the video path from the shopParameters
+                if(Kiwapp.get('shopParameters') && 'videoPathes' in Kiwapp.get('shopParameters')){
+                    var current = 0;
+                    var pathes = Kiwapp.get('shopParameters').videoPathes;
+
+                    //Playing the video
+                    player.play(pathes[current], 0, 0);
+
+                    //Listening video ending to play it again
+                    player.on("finish", function(){
+                        current++;
+
+                        if(current >= pathes.length){
+                            current = 0;
+                        }
+
+                        player.play(pathes[current], 0, 0);
+                    });
+                }
+                else{
+                    alert('You have no configured videoPath. The application can\'t work.');
+                }
+            });
+        </script>
+    </body>
+</html>
