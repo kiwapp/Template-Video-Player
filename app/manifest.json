@@ -1,10 +1,10 @@
 {
     "app_info": {
-        "name": "Video Playlist",
-        "author": "Adrien Carta",
+        "name": "Video Player",
+        "author": "Kiwapp",
         "codename": "1.0",
-        "author_email": "adrien@procheo.fr",
-        "description": "Playlist video player."
+        "author_email": "support@kiwapp.com",
+        "description": "Video player : you can add one or several videos to your playlist and watch them in Kiwapp"
     },
     "config": {
         "typedef": {},
